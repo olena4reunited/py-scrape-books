@@ -49,5 +49,5 @@ class BooksSpider(scrapy.Spider):
             ),
             "category": response.css("ul.breadcrumb li a::text").getall()[-1],
             "description": response.css("article > p::text").get(),
-            "upc": response.css("tr th:contains('UPC') + td::text").get().split("(")[-1].split(" ")[0],
+            "upc": response.css("tr th:contains('UPC') + td::text").get(),
         }
